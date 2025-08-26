@@ -355,7 +355,6 @@ class Glint_Wishlist
         ?>
         <div class="glint-wishlist">
             <link rel="stylesheet" id="glint-wishlist-style" href="<?php echo plugin_dir_url(dirname(__FILE__)). 'css/style.css', false ?>" type="text/css">
-            <h2><?php _e('Your Wishlist', 'glint-wishlist'); ?></h2>
             <ul class="glint-wishlist-products">
                 <?php foreach ($wishlist as $product_id) : 
                     $product = wc_get_product($product_id);
