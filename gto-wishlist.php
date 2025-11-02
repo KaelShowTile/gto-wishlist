@@ -60,11 +60,10 @@ function glint_wishlist_style_and_script()
 
     // Localize the script with the correct handle
     wp_localize_script(
-        'glint-wishlist-js', 
-        'glint_wishlist_vars', 
+        'glint-wishlist-js',
+        'glint_wishlist_vars',
         array(
-            'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('glint_wishlist_nonce')
+            'ajax_url' => admin_url('admin-ajax.php')
         )
     );
 }

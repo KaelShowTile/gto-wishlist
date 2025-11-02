@@ -11,8 +11,7 @@ jQuery(document).ready(function($) {
             url: glint_wishlist_remove_btn_params.ajax_url,
             data: {
                 action: 'glint_remove_from_wishlist',
-                product_id: product_id,
-                security: glint_wishlist_remove_btn_params.nonce
+                product_id: product_id
             },
             beforeSend: function() {
                 $button.addClass('loading');

@@ -1,7 +1,6 @@
-jQuery(document).ready(function($) 
+jQuery(document).ready(function($)
 {
     var ajax_url = glint_wishlist_vars.ajax_url;
-    var nonce = glint_wishlist_vars.nonce;
     
     $('body').on('click', '.wishlist-toggle', function(e) 
     {
@@ -15,8 +14,7 @@ jQuery(document).ready(function($)
             type: 'POST',
             data: {
                 action: 'glint_wishlist_toggle',
-                product_id: product_id,
-                nonce: nonce
+                product_id: product_id
             },
             dataType: 'json',
             beforeSend: function() {
@@ -30,7 +28,7 @@ jQuery(document).ready(function($)
                     } else {
                         $button.removeClass('in-wishlist');
                         $button.find('.text').text(glint_wishlist_vars.add_text || 'Add to Wishlist');
-                        console.error('Server error:', response.data);
+                        console.error('Server error:', response);
                     }
                     
                     // Update wishlist count if needed

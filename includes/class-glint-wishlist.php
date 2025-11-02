@@ -268,16 +268,12 @@ class Glint_Wishlist
     }
 
     public function ajax_toggle_wishlist(){
-        check_ajax_referer('glint_wishlist_nonce', 'nonce');
-        
         if (!isset($_POST['product_id']) || !is_numeric($_POST['product_id'])) {
             wp_send_json_error('Invalid product ID');
         }
         
         $product_id = intval($_POST['product_id']);
-        $this->toggle_wishlist($product_id);
-
-        $result = 'removed';
+        $result = $this->toggle_wishlist($product_id);
         
         wp_send_json_success(array(
             'status' => $result,
@@ -286,7 +282,6 @@ class Glint_Wishlist
     }
 
     public function ajax_remove_wishlist(){
-        //check_ajax_referer('glint_wishlist_remove_btn_params_nonce', 'nonce');
         if (!isset($_POST['product_id']) || !is_numeric($_POST['product_id'])) {
            wp_send_json_error('Invalid product ID');
         }
@@ -310,7 +305,6 @@ class Glint_Wishlist
         
         wp_localize_script('glint-wishlist-script', 'glint_wishlist_vars', array(
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('glint_wishlist_nonce'),
             'add_text' => __('Add to Wishlist', 'glint-wishlist'),
             'remove_text' => __('Remove from Wishlist', 'glint-wishlist')
         ));
@@ -347,7 +341,7 @@ class Glint_Wishlist
 
         wp_localize_script('ajax-wishlist-remove-btn', 'glint_wishlist_remove_btn_params', array(
             'ajax_url' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('glint_wishlist_remove_btn_params_nonce')
+            'empty_message' => __('Your wishlist is empty', 'glint-wishlist')
         ));
         
         
