@@ -39,7 +39,7 @@ function glint_wishlist_init() {
 function glint_wishlist_style_and_script() 
 {
     // Only load on product pages
-    if (!is_product()) return;
+    if (!is_product() && !is_product_taxonomy()) return;
 
     // Enqueue CSS
     wp_enqueue_style(
