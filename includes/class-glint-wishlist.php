@@ -314,7 +314,9 @@ class Glint_Wishlist
         <div class="glint-wishlist-button">
             <a href="#" class="wishlist-toggle <?php echo $is_in_wishlist ? 'in-wishlist' : ''; ?>" 
                data-product-id="<?php echo $product_id; ?>">
-                <span class="icon">❤</span>
+                <span class="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="wishlist-heart-icon"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                </span>
                 <span class="text">
                     <?php echo $is_in_wishlist ? __('Remove from Wishlist', 'glint-wishlist') : __('Add to Wishlist', 'glint-wishlist'); ?>
                 </span>

@@ -10,6 +10,15 @@
     font-size: 18px;
 }
 
+.glint-wishlist-button .wishlist-toggle .icon .wishlist-heart-icon{
+    fill: #fff;
+    margin: 5px;
+}
+
+.glint-wishlist-button .wishlist-toggle.in-wishlist .icon .wishlist-heart-icon{
+    fill: #ff0000;
+}
+
 .glint-wishlist-button .wishlist-toggle.in-wishlist .icon {
     color: #ff0000;
 }
